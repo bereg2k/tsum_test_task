@@ -1,0 +1,42 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:" + serenity_version)
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenLocal()
+    jcenter()
+}
+
+group 'ru.tsum'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+dependencies {
+    implementation 'net.serenity-bdd:serenity-core:' + serenity_version
+    implementation 'net.serenity-bdd:serenity-junit:' + serenity_version
+    implementation 'junit:junit:' + junit_version
+    implementation 'commons-io:commons-io:' + commons_version
+
+    testCompile 'net.serenity-bdd:serenity-core:' + serenity_version
+    testCompile 'net.serenity-bdd:serenity-junit:' + serenity_version
+    testCompile('junit:junit:' + junit_version)
+    testCompile('org.assertj:assertj-core:' + assertj_version)
+    testCompile('org.slf4j:slf4j-simple:' + slf4j_version)
+}
+gradle.startParameter.continueOnFailure = true

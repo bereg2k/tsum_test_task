@@ -1,0 +1,6 @@
+email;password;role
+xineg23942@dffwer.com;password123;valid
+xineg23942@dffwer.com;password321;incorrectPass
+dontexist23942@dffwer.com;password123;non-existent
+xineg23942@dffwer;password123;invalidEmail
+xineg23942@dffwer.com;pass;invalidPass
